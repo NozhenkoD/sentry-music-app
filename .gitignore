@@ -1,0 +1,17 @@
+.idea
+.DS_Store
+.vscode
+node_modules/*
+tmp/*
+lib/*
+logs/*
+pdffiller-node.sublime-project
+pdffiller-node.sublime-workspace
+*.zip
+*.log
+.module-cache
+build/js/*
+.jshintrc
+assets.json
+/public
+.sentryclirc
