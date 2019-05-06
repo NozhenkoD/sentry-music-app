@@ -13,5 +13,4 @@ pdffiller-node.sublime-workspace
 build/js/*
 .jshintrc
 assets.json
-/public
 .sentryclirc
