@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Input, List, Skeleton, Avatar } from "antd";
+import { Input, List, Skeleton, Avatar, Button } from "antd";
 import * as Sentry from "@sentry/browser";
 import getList from "../store/actions/getList";
 
@@ -20,15 +20,11 @@ class Container extends Component {
     super(props);
 
     Sentry.init({
-      release: "foo",
-      dsn: "https://fc0edcf6927a4397855797a033f04085@sentry.io/1417586",.gitignore
-      // integrations: [new Sentry.Integrations.RewriteFrames()]
+      dsn: "https://fc0edcf6927a4397855797a033f04085@sentry.io/1417586",
     });
   }
 
   componentDidCatch(error, errorInfo) {
-    this.setState({ error });
-    console.log("error, errorInfo", { error, errorInfo });
     Sentry.withScope(scope => {
       Object.keys(errorInfo).forEach(key => {
         scope.setExtra(key, errorInfo[key]);
@@ -41,15 +37,12 @@ class Container extends Component {
     const user = undefined;
     return (
       <div className="App">
-        <button
-          type="button"
-          onClick={() => {
-            console.log(user.email);
-          }}
+        <Button
+          type="danger"
+          onClick={() => console.log(user.email)}
         >
-          test error1
-        </button>
-        <div onClick={() => Sentry.showReportDialog()}>Report feedback1</div>
+          Test error
+        </Button>
         <h1>Music Finder</h1>
         <br />
         <Search onSearch={value => getList(value)} enterButton />
