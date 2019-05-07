@@ -1,6 +1,7 @@
 {
   "name": "musicapp",
   "version": "1.0.0",
+  "homepage": "https://nozhenkod.github.io/sentry-music-app/",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
